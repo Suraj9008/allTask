@@ -16,13 +16,14 @@ const users = require('./server/routes/users');
 const images = require('./server/routes/s3');
 const moments = require('./server/routes/moments');
 const email = require('./server/routes/sendMail');
-
+const conatct = require('./server/routes/contact');
 // middelwares
 app.use(cors());
 app.use(express.json());
 app.use('/user',users);
 app.use('/image',images);
 app.use('/mail',email);
+app.use('/contact',conatct);
 
 
 // DB connection

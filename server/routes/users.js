@@ -1,6 +1,6 @@
 const express = require('express');
 const auth = require('../middleware/auth');
-const authorize = require('../helper/authorize')
+const authorize = require('../helper/authorize');
 const Role = require('../helper/role');
 const {
   createUser,
@@ -8,7 +8,6 @@ const {
   getEmail,
 } = require('../controllers/userController');
 const role = require('../helper/role');
-
 const router = express.Router();
 // router.get('/', (req, res) => {
 // })
@@ -77,7 +76,7 @@ router.get('/get-email/:email', async (req, res) => {
   });
 });
 
-router.get('/role',authorize(role.Admin),async(req,res)=>{
+router.get('/role', authorize(role.Admin), async (req, res) => {
   res.send('responce from admin')
 })
 

@@ -1,267 +1,101 @@
 const mongoose = require('mongoose');
-const contactSchema = mongoose.Schema({
+const contactModel = mongoose.Schema({
     companyId: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'company',
     },
     // Basic info
-    prefix: {
-        type: String,
-        required: true
-    },
-    fristName: {
-        type: String,
-        required: true
-    },
-    middleName: {
-        type: String,
-        required: true
-    },
-    lastName: {
-        type: String,
-        required: true
-    },
-    Suffix: {
-        type: String,
-        required: true
-    },
-    currentEmployer: {
-        type: String,
-        required: true
-    },
-    jobTitle: {
-        type: String,
-        required: true
-    },
-    nickname: {
-        type: String,
-        required: true
-    },
-    contactType: {
-        type: String,
-        required: true
-    },
-    email: {
-        type: String,
-        required: true
-    },
-    emailType: {
-        type: String,
-        required: true
-    },
-    onHold: {
-        type: String,
-        required: true
-    },
-    bulkMailings: {
-        type: String,
-        required: true
-    },
-    primary: {
-        type: String,
-        required: true
-    },
-    phoneNo: {
-        type: [new mongoose.Schema({
-            phone: {
-                type: Number,
-                required: true
-            },
-            ext: {
-                type: Number,
-                required: true
-            },
-            phoneLocation: {
-                type: String,
-                required: true
-            }
-        })]
-    },
-    instantMessenger: {
-        type: [new mongoose.Schema({
-            instMessenger: {
-                type: Number,
-                required: true
-            },
-            imLocation: {
-                type: string,
-                required: true
-            },
-            imType: {
-                type: String,
-                required: true
-            }
-        })]
-    },
-    website: {
-        type: String,
-        required: true
-    },
-    websiteType: {
-        type: String,
-        required: true
-    },
-    ConatctScorce: {
-        type: String,
-        required: true
-    },
-    externalID: {
-        type: String,
-        required: true
-    },
-    imageUrl: {
-        type: String,
-        required: true
-    },
 
-    // Constituent Information
-    gender: {
-        type: Date,
-        required: true
-    },
-    birthDate: {
-        type: String,
-        required: true
-    },
-    contactIsDeceased: {
-        type: String,
-        required: true
-    },
-
-    mostImportantIssue: {
-        type: String,
-        required: true
-    },
-    maritalStatus: {
-        type: String,
-        required: true
-    },
-    maritalDate: {
-        type: Date,
-        required: true
-    },
-
-    // Address
-    addressLocationType: {
-        type: String,
-        required: true
-    },
-    primaryLocationForThisContact: {
-        type: String
-    },
-    billingLocationForThisContact: {
-        type: String
-    },
-    useAnotherContactsAddress: {
-        type: String
-    },
-    streetAddress: {
-        type: String,
-        required: true
-    },
-    supplementalAddress1: {
-        type: String
-    },
-    supplementalAddress2: {
-        type: String
-    },
-    supplementalAddress3: {
-        type: String
-    },
-    city: {
-        type: String,
-        required: true
-    },
-    postalCode: {
-        type: String,
-        required: true
-    },
-    Country: {
-        type: String,
-        required: true
-    },
-    stateOrProvince: {
-        type: String,
-        required: true
-    },
-    Latitude: {
-        type: String,
-        required: true
-    },
-    Longitude: {
-        type: String,
-        required: true
-    },
-
-    // Communication Preferences
-    communicationStyle: {
-        type: String,
-        required: true
-    },
-    emailGreeting: {
-        type: String,
-        required: true
-    },
-    postalGreeting: {
-        type: String,
-        required: true
-    },
-    Addressee: {
-        type: String,
-        required: true
-    },
-    privacy: {
-        type: [String],
-        required: true
-    },
-    preferredCommunicationMethod: {
-        type: [String],
-        required: true
-    },
-    preferredLanguage: {
-        type: [String],
-        required: true
-    },
-    noBulkEmails: {
-        type: String,
-        required: true
-    },
-    emailFormat: {
-        type: String,
-        required: true
-    },
-
-    // Notes
-    subject: {
-        type: [String],
-        required: true
-    },
-    subject: {
-        type: String,
-        required: true
-    },
-    note: {
-        type: String,
-        required: true
-    },
-    tag: {
-        type: String,
-        required: true
-    },
-    group: {
-        type: String,
-        required: true
-    },
-    referenceFrom: {
-        type: String,
-        required: true
-    },
+    CoantactType: String,
+    AddProfile: String,
+    Prefix: String,
+    FirstName: String,
+    MiddleName: String,
+    LastName: String,
+    Suffix: String,
+    PreferredName: String,
+    Gender: String,
+    DateofBirth: String,
+    Email: String,
+    EmailType: String,
+    OnHold: String,
+    BulkMailings: String,
+    SelectYourIdType: String,
+    EnterIdNo: String,
+    CurrentEmployer: String,
+    JobTitle: String,
+    AdditionalInfo: String,
+    Phone: Array,
+    ContactLocation: String,
+    InstantMessenger: Array,
+    IMLocation: String,
+    IMType: String,
+    SocialMediaName: String,
+    Username: String,
+    Website: String,
+    ReferralContact: String,
+    ReferralID: String,
+    Testimonials: String,
+    AddProfessionalCertificates: String,
+    EmployeeStatus: String,
+    ConvenientTimeforreachingouttoyou: String,
+    LevelEducation: String,
+    FavoriteColour: String,
+    MostPreferredHolidayDestination: String,
+    FavoritesBrands: String,
+    FavoriteleisuretimeActivities: String,
+    MostUsedApps: String,
+    FavoriteSites: String,
+    PreferredsocialMediaPlatform: String,
+    NativePlace: String,
+    Languagesknown: String,
+    FavoriteNiche: String,
+    PreferredShoppingMethod: String,
+    Shoppingwebsitespreferredotherthanus: String,
+    Religion: String,
+    FoodTypepreferred: String,
+    WorkoutTypepreferred: String,
+    BloodGroup: String,
+    CharitiesRelatedto: String,
+    Closetoheartsocialservices: String,
+    MostImportantIssue: String,
+    MartialStatus: String,
+    MarriageAnniversaryDate: String,
+    FamilyStrength: String,
+    Relation: String,
+    Name: String,
+    Age: String,
+    WorkingorDependent: String,
+    PhoneNumber: String,
+    SearchCurrentAddress: String,
+    AddressType: String,
+    Primarylocationforthiscontact: String,
+    Billinglocationforthiscontact: String,
+    Useanothercontactsaddress: String,
+    UnitNumber: String,
+    StreetNumber: String,
+    StreetName: String,
+    StreetType: String,
+    Country: String,
+    SelectTimezone: String,
+    State: String,
+    City: String,
+    PostalCode: String,
+    CommunicationStyle: String,
+    SalutationType: String,
+    Privacy: String,
+    PreferredCommunicationMethod: String,
+    PreferredLanguage: String,
+    EmailFormat: String,
+    NOBULKEMAILS: String,
+    Tag: String,
+    Group: String,
+    ReferenceFrom: String,
     date: {
         type: Date,
         default: Date.now()
     }
 });
 
-const Contact = mongoose.model("contact", contactSchema);
-module.exports.Contact = Contact;
-module.exports.contactSchema = contactSchema;
+//.exports.Contact = Contact;
+module.exports = mongoose.model("contact", contactModel);
